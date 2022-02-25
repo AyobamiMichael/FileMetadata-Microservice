@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 });
  
 
-app.post('/api/fileanalyse', upload.single('upfile'), (req, res)=>{
+app.post('/api/fileanalyse', multer().single('upfile'), (req, res)=>{
   let resObject = {};
        resObject['name'] = req.file.originalname;
        resObject['type'] = req.file.mimetype;
